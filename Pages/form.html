@@ -1,35 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de formulario</title>
+
+    <style>
+        .campo-texto {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            /* Quita el borde feo por defecto del navegador */
+        }
+
+        /* Cuando el usuario hace clic para escribir (:focus) */
+        .campo-texto:focus {
+            border-color: #2196F3;
+            box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+        }
+
+        /* Cuando el dato ingresado es un correo válido (:valid) */
+        .campo-texto:valid {
+
+            border-color: green;
+        }
+
+        /* Estilo base del botón */
+        .boton-enviar {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Cuando el ratón pasa por encima del botón (:hover) */
+        .boton-enviar:hover {
+            background-color: #ff5722;
+        }
+    </style>
+
 </head>
+
 <body>
-    <h1>formulario</h1>
-<form action="/guardar-registro" method="POST">
-    <label for="usuario">Nombre de usuario:</label>
-    <input type="text" id="usuario" placeholder="Ej. jperez123">
-    <br>
+    <h1>Formulario</h1>
 
-    <label for="clave">Contraseña:</label>
-    <input type="password" id="clave">
-    <br>
-    <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-    <input type="date" id="fecha_nacimiento">
-    <br>
-    <button type="submit">Registrarse en el sistema</button>
-</form>
-
-
-
-
-
-
-
-
-
-
-
+    <form action="/guardar-registro" method="POST">
+        <label for="usuario">Nombre de usuario:</label>
+        <input class="campo-texto" type="text" id="usuario" placeholder="Ej. jperez123">
+        <br>
+        <label for="clave">Contraseña:</label>
+        <input type="password" id="clave">
+        <br>
+        <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="fecha_nacimiento">
+        <br>
+        <button class="boton-enviar" type="submit">Registrarse en el sistema</button>
+    </form>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
 </body>
-</html>
