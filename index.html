@@ -3,83 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ejercicio1-Carlos Timaran</title>
+    <title>Ejercicio 1 - Carlos Timaran</title>
+    <style>
+        /* Variables de color para facilitar cambios */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 900px;
+            background: var(--white);
+            margin: 20px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        section {
+            border-left: 5px solid var(--accent-color);
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        article h3 {
+            color: var(--primary-color);
+        }
+
+        aside {
+            background-color: #e8eff1;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            border: 1px dashed var(--accent-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .btn-scroll {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 15px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body>
-     <header>  
-         <h1>Curso Desarrollo Web</h1>
-         <h3>Autor: Anderson Potosi</h3>
-         <nav>
-             <ul>
-                 <li><a href="pages/text.html">Etiquetas de texto</a></li>
-                 <li><a href="pages/link.html">Enlaces e imagenes</a></li>
-                 <li><a href="pages/structure.html">Estructura semantica</a></li>
-                 <li><a href="pages/multimedia.html">multimedia</a></li>
-                 <li><a href="pages/table.html">tablas</a></li>
-                 <li><a href="pages/form.html">formulario</a></li>
-                  <li><a href="pages/tribute.html">tributo a rayo</a></li>
+
+    <header>  
+        <h1>Curso Desarrollo Web</h1>
+        <h3>Autor: Anderson Potosi</h3>
+        <nav>
+            <ul>
+                <li><a href="pages/text.html">Etiquetas de texto</a></li>
+                <li><a href="pages/link.html">Enlaces e imágenes</a></li>
+                <li><a href="pages/structure.html">Estructura semántica</a></li>
+                <li><a href="pages/multimedia.html">Multimedia</a></li>
+                <li><a href="pages/table.html">Tablas</a></li>
+                <li><a href="pages/form.html">Formulario</a></li>
+                <li><a href="pages/tribute.html">Tributo a Rayo</a></li>
                 <li><a href="pages/layout.html">Layout</a></li>
-                <li><a href="Pages/form.html">formulario</a></li> 
-                 <li><a href="Pages/responsive">layout y navegacion</a></li> 
-                
+                <li><a href="pages/responsive.html">Responsive</a></li>
+                <li><a href="pages/tribute.html">Tributo a doreamon y sus amigos</a></li>
+            </ul>
+            <a href="#footer" class="btn-scroll">Ir al final ↓</a>
+        </nav>
+    </header>
 
+    <main>
+        <h1>Contenido Principal</h1>
+        <section>
+            <h2>Sección Informativa</h2>
+            <article>
+                <h3>Introducción al Proyecto</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati adipisci suscipit iure soluta expedita mollitia
+                    ea quam magni inventore quasi repellendus cumque corrupti, perspiciatis at placeat repellat voluptatum eius nisi.
+                </p>
+                <p>
+                    Este es un ejemplo de cómo la estructura semántica de HTML5 se combina con CSS para crear una interfaz legible y organizada.
+                </p>
+            </article>
+        </section>
+    </main>
 
-             </ul>
-         <a href="#footer">ir al final</a>
-         </nav>
-     </header>
-     <main>
-             <h1>contenido principal</h1>
-               <section>
-                   <h2>Seccion</h2>
-                   <article>
-                       <h3>Articulo</h3>
+    <aside>
+        <h2>Contenido Extra</h2>
+        <p>¿Sabías que el uso de etiquetas semánticas mejora el SEO de tu sitio web?</p>
+    </aside>
 
-                       <h3>Articulo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati adipisci suscipit iure soluta expedita mollitia
-                        ea quam magni inventore quasi repellendus cumque corrupti, perspiciatis at placeat repellat voluptatum eius nisi
-                        eaque libero necessitatibus provident repudiandae totam? Temporibus facere quibusdam incidunt nostrum asperiores
-                        minima aliquam consequatur fugit perspiciatis nesciunt. Enim eveniet expedita saepe explicabo nisi iusto fugit ipsum
-                        eos nemo velit quibusdam tenetur dolor dignissimos minus rerum aliquam, porro eligendi dolores! Doloribus unde iure
-                        provident perspiciatis enim aspernatur impedit numquam rem tempore nemo ipsa consequuntur esse id rerum, dolores quo
-                        neque voluptate? Deleniti sunt at veniam! Magni, beatae voluptate? Maxime distinctio hic neque ipsa molestias sunt
-                        voluptatem pariatur esse qui! Inventore nulla ea eveniet recusandae, impedit veniam quos facilis maxime qui sapiente
-                        aut dolores molestiae ad saepe earum architecto odio? Quas, quos. Exercitationem dolorum facere iure necessitatibus
-                        id recusandae quod magni quasi qui veritatis. Commodi provident distinctio facere animi architecto saepe assumenda
-                        quidem deleniti autem, laboriosam voluptates ea molestias sequi doloremque non ipsam hic eligendi. Aperiam aut fugit
-                        inventore consectetur ipsam similique debitis voluptatum nostrum vel, laudantium quidem, alias ex eos commodi culpa
-                        sapiente perspiciatis quia ab nemo consequatur repudiandae? Repellendus modi dolorum dolorem sapiente, voluptatibus
-                        quos officia necessitatibus soluta aut nemo, accusantium sint a facere natus, repellat dolores quod vitae possimus.
-                        Error quod facilis, quos enim amet delectus fugit, expedita quisquam tempore accusamus deleniti nam provident! Nisi
-                        impedit modi error odio eius voluptatum obcaecati? Soluta vel quidem cumque ab corrupti possimus beatae quos
-                        repellendus, est at nam qui, doloribus recusandae officia commodi repellat perferendis maxime laborum pariatur vero
-                        minus? Officia illum magnam dicta? Ipsam, sed, animi atque reiciendis alias saepe iure qui laboriosam corporis natus
-                        laborum eaque nihil aperiam consectetur delectus numquam ipsa totam aut rerum praesentium veniam dolorem repellendus
-                        blanditiis? Molestias labore eveniet laboriosam, nostrum minus facere sequi soluta.
-                    </p>
-                    
-                    </article>
-                </section>
-     </main>
-     <aside>
-         <h2>contenido principal</h2>
-     </aside>
-     <footer> id="footer"
-         <h2>Pie de pagina</h2>
-     </footer>
-   
-    
- 
- 
- 
- 
- 
- 
- 
-  <!--  <h1> Indice </h1>-->
- <!-- <a href="pages/link.html">Ir a enlaces e imagenes </a>  -->
-
-
+    <footer id="footer">
+        <h2>Pie de página</h2>
+        <p>© 2024 - Diseñado por Carlos Timaran & Anderson Potosi</p>
+    </header>
 
 </body>
 </html>

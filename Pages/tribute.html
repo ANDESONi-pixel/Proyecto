@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doraemon: El Gato del Siglo XXII</title>
+    <style>
+        /* CSS - ESTILOS Y COLORES */
+        :root {
+            --azul-doraemon: #00A0E9;
+            --rojo-collar: #E60012;
+            --amarillo-cascabel: #F9D800;
+            --blanco: #FFFFFF;
+            --negro: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f0f8ff;
+            color: var(--negro);
+            scroll-behavior: smooth;
+        }
+
+        /* Encabezado con Animación */
+        header {
+            background: var(--azul-doraemon);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 8px solid var(--rojo-collar);
+        }
+
+        .header-content h1 { font-size: 3rem; margin: 0; text-shadow: 2px 2px var(--negro); }
+        
+        /* Navegación */
+        nav {
+            background: #fff;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--azul-doraemon);
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--rojo-collar); }
+
+        /* Contenedor de Secciones */
+        .section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 { color: var(--azul-doraemon); border-left: 5px solid var(--amarillo-cascabel); padding-left: 10px; }
+
+        .img-wrap { text-align: center; margin: 20px 0; }
+        .img-wrap img { width: 100%; max-width: 500px; border-radius: 15px; border: 3px solid var(--azul-doraemon); }
+
+        /* Galería de Amigos */
+        .grid-amigos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .card-personaje {
+            text-align: center;
+            padding: 10px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .card-personaje:hover {
+            border-color: var(--azul-doraemon);
+            background: #eef9ff;
+            transform: translateY(-5px);
+        }
+
+        .card-personaje img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
+
+        /* Sección de Inventos */
+        .inventos-list {
+            background: #fff9c4;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--negro);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        /* Botón de Sonido Flotante */
+        #sound-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--rojo-collar);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Doraemon: El Gato Cósmico</h1>
+            <p>Un viaje desde el siglo XXII para cambiar el destino de Nobita</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#biografia">Historia</a>
+        <a href="#amigos">Amigos</a>
+        <a href="#inventos">Inventos</a>
+    </nav>
+
+    <section id="biografia" class="section">
+        <h2>La Vida de Doraemon</h2>
+        <div class="img-wrap">
+            <img src="../imagenes/Doreamon.webp" alt="Doraemon">
+        </div>
+        <p>
+            Doraemon es un gato robot fabricado el <b>3 de septiembre de 2112</b> en la Fábrica de Robots Matsushiba. Originalmente era de color amarillo y tenía orejas, pero tras un incidente donde un ratón robótico se las comió, se tornó azul debido a la tristeza.
+        </p>
+        <p>
+            Fue enviado al pasado por Sewashi, el tataranieto de Nobita, para ayudar a su antepasado a ser una mejor persona y evitar que su familia viviera en la pobreza por las malas decisiones de Nobita.
+        </p>
+    </section>
+
+    <section id="amigos" class="section">
+        <h2>Doraemon y sus Amigos</h2>
+        <p>Haz clic en cada uno para saber su rol:</p>
+        <div class="grid-amigos">
+            <div class="card-personaje" onclick="mostrarInfo('Nobita', 'El niño despistado pero de gran corazón.')">
+                <img src="../imagenes/novita.jpg" alt="Nobita">
+                <h4>Nobita Nobi</h4>
+            </div>
+            <div class="card-personaje" onclick="mostrarInfo('Shizuka', 'La chica inteligente y amante de los baños.')">
+                <img src="../imagenes/shizuka.jpg" alt="Shizuka">
+                <h4>Shizuka Minamoto</h4>
+            </div>
+            <div class="card-personaje" onclick="mostrarInfo('Gian', 'El fuerte del grupo con una voz terrible para cantar.')">
+                <img src="../imagenes/Takeshi.jpg" alt="Gian">
+                <h4>Takeshi (Gian)</h4>
+            </div>
+            <div class="card-personaje" onclick="mostrarInfo('Suneo', 'El niño rico presumido pero buen amigo.')">
+                <img src="../imagenes/Suneo.jpg" alt="Suneo">
+                <h4>Suneo Honekawa</h4>
+            </div>
+        </div>
+        <div id="info-display" style="margin-top:20px; text-align:center; font-weight:bold; color:var(--rojo-collar);"></div>
+    </section>
+
+    <section id="inventos" class="section">
+        <h2>Inventos Legendarios</h2>
+        <div class="inventos-list">
+            <ul>
+                <li><strong>Puerta Mágica:</strong> Permite viajar a cualquier lugar del mundo.</li>
+                <li><strong>Gorro-Cóptero:</strong> Un pequeño hélice para volar por los cielos.</li>
+                <li><strong>Pañuelo del Tiempo:</strong> Capaz de envejecer o rejuvenecer objetos.</li>
+                <li><strong>Linterna de Aumento:</strong> Para hacer cosas gigantes o diminutas.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>Tributo creado para el Curso de Desarrollo Web 2026</p>
+        <p>¡Gracias por visitar el siglo XXII!</p>
+    </footer>
+
+    <audio id="audio-exito" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+    <button id="sound-btn" onclick="tocarTimbre()">🔔 Sonido</button>
+
+    <script>
+        // SCRIPT: Interactividad
+        function mostrarInfo(nombre, descripcion) {
+            const display = document.getElementById('info-display');
+            display.innerText = nombre + ": " + descripcion;
+            
+            // Reproducir sonido al hacer clic
+            const audio = document.getElementById('audio-exito');
+            audio.play();
+        }
+
+        function tocarTimbre() {
+            alert("¡Doraemon ha sacado un invento de su bolsillo!");
+            document.body.style.backgroundColor = "#F9D800";
+            setTimeout(() => {
+                document.body.style.backgroundColor = "#f0f8ff";
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
